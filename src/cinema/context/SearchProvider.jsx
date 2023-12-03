@@ -10,13 +10,13 @@ export const SearchProvider = ({children}) => {
         year: item.Year,
         id: item.imdbID,
         category: item.Type,
-        image: item.Poster
+        url: item.Poster
     })) 
     
     const [search, setSearch] = useState({
         searchText: '',
         loading: false,
-        content: [initialState],
+        content: initialState,
         error: null,
     })
 

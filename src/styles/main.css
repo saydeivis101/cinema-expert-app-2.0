@@ -121,6 +121,10 @@
     background: var(--background-body);
     text-rendering: optimizeLegibility;
   }
+
+  ul{
+    list-style: none;
+  }
   
   @media (prefers-color-scheme: dark) {
   
