@@ -1,5 +1,28 @@
-.cinema-grid{
-    display:grid;
+.cinema-grid {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap:1rem;
-}
+    gap: 1rem;
+  }
+  
+  .button-favorite {
+    display: flex;
+  }
+  
+  .buttons-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  img.heart-icon-favorite, img.more-icon {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%; /* Ajustado para ser un círculo perfecto */
+    width: 1rem; /* Ajusta el tamaño según tus necesidades */
+    height:1rem; /* Ajusta el tamaño según tus necesidades */
+    box-sizing: border-box;
+  }
+
+  img.favorite{
+    background-color: red;
+  }
+  
+  

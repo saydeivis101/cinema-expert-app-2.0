@@ -23,7 +23,7 @@ dependencies:
 
 devDependencies:
   vite:
-    specifier: ^5.0.0
+    specifier: ^5.0.4
     version: 5.0.4
 
 packages:

@@ -7,7 +7,7 @@ export const CinemaRoutes = () => {
   return (
    <Routes>
     <Route path="/*" element={<MainPage/>}/>
-    <Route path="cinema/:id" element={<CinemaItemPage/>}/>
+    <Route path="cinema/:title" element={<CinemaItemPage/>}/>
    </Routes>
 
   )

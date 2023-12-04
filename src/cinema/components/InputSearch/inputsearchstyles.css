@@ -1,0 +1,15 @@
+.error{
+    border: 1px solid red;
+}
+
+.x-circle-search-input{
+    position: absolute;
+    top: 18.7vh;
+    left: 64vw;
+    cursor:pointer;
+    color:white;
+    background-color: white;
+    border-radius: 100%;
+    width: 1.3rem;
+}
+
