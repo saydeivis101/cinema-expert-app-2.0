@@ -1,23 +1,33 @@
 import React, { useContext } from 'react'
 import { SearchContext } from '../../context/SearchProvider';
-import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useSearch } from '../../hooks/useSearch';
+import { Navigate } from 'react-router-dom';
 
 export const CinemaItem = () => {
 
     const { title } = useParams();
-    console.log(title);
-    const {search, content} = useContext(SearchContext);
-  
-    const item = content?.filter((item) => {
-        item.title == title;
-    });  
-    const hasContent = item.length >0;
+    const {search, searchText, validationError, content} = useContext(SearchContext);
+    const navigate = useNavigate();
+
+    useSearch();
+
+    const item = content.find((item)=>(
+      item.title === title
+    ))
+
+    if(!item){
+      return <Navigate to="/"/>
+    }
+
+    const onTurnBack = ()=>{
+      navigate(-1)
+    }
 
   return (
    <>
-    {hasContent? <ul className='cinema-grid'>
-          {content.map((item)=>(
+    {item? <ul className='cinema-grid'>
             <li key={item.id}>
               <picture>
                 <img src={item.url} alt={item.title} />
@@ -29,13 +39,10 @@ export const CinemaItem = () => {
 
               <h5>{item.year}</h5>
 
-              <button> <img src="/assets/heartIcon2.svg" alt="heart-icon" />Favorite</button>
+             <button onClick={onTurnBack}>Go Back...</button>
 
-             <Link to={`cinema/${item.title}`}>
-             <button>More...</button>
-             </Link>
             </li>
-          ))}
+
         </ul> : <h3>There's not content with that Search :(</h3>}
    </>
   )

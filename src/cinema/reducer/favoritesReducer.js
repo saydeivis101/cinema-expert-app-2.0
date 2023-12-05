@@ -1,8 +1,9 @@
-const persistentState = (newState)=>{
-  window.localStorage.setItem('favorites', JSON.stringify(newState))
-}
 
 export const favoritesReducer = (state, action) => {
+  
+  const persistentState = (newState)=>{
+    window.localStorage.setItem('favorites', JSON.stringify(newState))
+  }
   
   const {payload: actionPayload , type: actionType} = action;
 

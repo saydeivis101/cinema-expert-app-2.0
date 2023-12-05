@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import { FavoritesContext } from "../../context/FavoritesProvider";
 
 export const CinemaGridComponent = () => {
-    const { search, content } = useContext(SearchContext);
-    const { favorites, addToFavorites, RemoveFromFavorites } =
+    const { content } = useContext(SearchContext);
+    const { favorites, addToFavorites } =
     useContext(FavoritesContext);
 
     const itemInFavorite = (item) => {

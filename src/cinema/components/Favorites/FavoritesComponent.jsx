@@ -9,10 +9,6 @@ export const FavoritesComponent = () => {
 
     const {favorites, removeFromFavorites} = useContext(FavoritesContext);
 
-    const nextItems = ()=>{
-      
-    }
-
     const hasFavorites = favorites.length>0;
 
   return (
