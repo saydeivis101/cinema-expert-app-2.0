@@ -1,10 +1,11 @@
 import React from "react";
 import { CinemaGridComponent } from "./cinema/components/CinemaGrid/CinemaGridComponent";
 import { InputSearchComponent } from "./cinema/components/InputSearch/InputSearchComponent";
-import { SearchProvider } from "./cinema/context/SearchProvider";
-import "./styles/app.css";
-import { FavoritesComponent } from "./cinema/components/Favorites/FavoritesComponent";
 import { FavoritesProvider } from "./cinema/context/FavoritesProvider";
+
+import "./styles/app.css";
+import { FavoritesAsideComponent } from "./cinema/components/Favorites/FavoritesAsideComponent";
+
 
 export const CinemaExpertApp = () => {
   return (
@@ -16,11 +17,11 @@ export const CinemaExpertApp = () => {
         </header>
 
         <aside>
-          <FavoritesComponent/>
+          <FavoritesAsideComponent/>
         </aside>
 
         <main>
-          <CinemaGridComponent/>
+          <CinemaGridComponent arrayName="content" contextName={'searchContent'}/>
         </main>
 
       </div>

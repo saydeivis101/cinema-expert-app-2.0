@@ -1,9 +1,9 @@
-import React, { useContext, useId, useRef, useState } from 'react'
+import React, { useContext, useId } from 'react'
 import { HeartIcon } from '../Icons/HeartIcon'
 import './favoritesStyles.css';
 import { FavoritesContext } from '../../context/FavoritesProvider';
 
-export const FavoritesComponent = () => {
+export const FavoritesAsideComponent = () => {
 
     const inputHeartIcon = useId()
 
@@ -14,7 +14,6 @@ export const FavoritesComponent = () => {
   return (
     
     <div className="container favorites-container">
-
         <label className='heart-favorites' htmlFor={inputHeartIcon}>
             <HeartIcon />
         </label>
@@ -22,7 +21,6 @@ export const FavoritesComponent = () => {
         <input className='input-heart-checkbox' type="checkbox" name="" id={inputHeartIcon} />
 
         <div className="display-favorites">
-
 
             {
               favorites? <ul className='favorites-grid'>
